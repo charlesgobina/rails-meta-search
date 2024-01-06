@@ -1,0 +1,16 @@
+<% # halt controller that controls form submission after 500ms %>
+
+<h1>Search Here</h1>
+<%= form_with url: term_searches_path, method: :post, data: {controller: "halt", halt_target: "form" }  do |form|  %>
+  <%= form.search_field :term, data: { action: "input->halt#search" } %>
+<%end%>
+
+<div id="search_results">
+  search results will go here
+</div>
+
+<p style="color: green"><%= notice %></p>
+
+
+
+<%= link_to "New search", new_search_path %>

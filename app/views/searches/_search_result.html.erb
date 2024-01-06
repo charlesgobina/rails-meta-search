@@ -1,0 +1,5 @@
+<%= @search.count %>
+<% searches.each do |search| %>
+  <br>
+  <%= link_to highlight(search.term, params[:term]), search %>
+<% end %>
